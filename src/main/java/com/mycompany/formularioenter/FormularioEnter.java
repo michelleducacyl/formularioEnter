@@ -4,7 +4,9 @@
  */
 package com.mycompany.formularioenter;
 
+import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,14 +38,14 @@ public class FormularioEnter extends javax.swing.JFrame {
         barra = new javax.swing.JPanel();
         logo2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        passwordTxt = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         accederBtn = new javax.swing.JPanel();
         accederTxt = new javax.swing.JLabel();
-        emailTxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        userNameTxt = new javax.swing.JTextField();
+        passwordTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -85,21 +87,6 @@ public class FormularioEnter extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
         whiteBg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 200, 10));
 
-        passwordTxt.setForeground(new java.awt.Color(204, 204, 204));
-        passwordTxt.setText("jPasswordField1");
-        passwordTxt.setBorder(null);
-        passwordTxt.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                passwordTxtFocusLost(evt);
-            }
-        });
-        passwordTxt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                passwordTxtMousePressed(evt);
-            }
-        });
-        whiteBg.add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 200, -1));
-
         jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
         whiteBg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 200, 20));
 
@@ -108,7 +95,7 @@ public class FormularioEnter extends javax.swing.JFrame {
         whiteBg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jLabel2.setText("ContraseÃ±a");
+        jLabel2.setText("Contraseña");
         whiteBg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         accederBtn.setBackground(new java.awt.Color(153, 153, 255));
@@ -154,31 +141,11 @@ public class FormularioEnter extends javax.swing.JFrame {
 
         whiteBg.add(accederBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 200, 40));
 
-        emailTxt.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        emailTxt.setForeground(new java.awt.Color(204, 204, 204));
-        emailTxt.setText("mail@company.com");
-        emailTxt.setToolTipText("");
-        emailTxt.setBorder(null);
-        emailTxt.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                emailTxtFocusLost(evt);
-            }
-        });
-        emailTxt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                emailTxtMousePressed(evt);
-            }
-        });
-        emailTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailTxtActionPerformed(evt);
-            }
-        });
-        whiteBg.add(emailTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 200, -1));
-
         jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        jLabel3.setText("INICIAR SESIÃ“N ");
+        jLabel3.setText("INICIAR SESIÓN ");
         whiteBg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 160, -1));
+        whiteBg.add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 200, -1));
+        whiteBg.add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 200, -1));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -205,44 +172,16 @@ public class FormularioEnter extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTxtFocusLost
-        // TODO add your handling code here:
-        if(emailTxt.getText().isBlank()){
-           emailTxt.setText("email@dominio.com");
-           emailTxt.setForeground(Color.GRAY);
-        }
-    }//GEN-LAST:event_emailTxtFocusLost
-
-    private void passwordTxtFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTxtFocusLost
-        // TODO add your handling code here:
-        if(String.valueOf(passwordTxt.getPassword()).isEmpty()){
-           passwordTxt.setText("198723");
-           passwordTxt.setForeground(Color.GRAY);
-        }
-    }//GEN-LAST:event_passwordTxtFocusLost
-
     private void accederBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseClicked
         // TODO add your handling code here:
-        if(String.valueOf(passwordTxt.getPassword()).equals("123456" ) && emailTxt.getText().equals("michelle@gmail.com" )){
-             JOptionPane.showMessageDialog(null, "Â¡Bienvenido al sistema!", "Inicio de sesiÃ³n exitoso",
+        if(String.valueOf(passwordTxt.).equals("123456" ) && emailTxt.getText().equals("michelle@gmail.com" )){
+             JOptionPane.showMessageDialog(null, "¡Bienvenido al sistema!", "Inicio de sesión exitoso",
         JOptionPane.INFORMATION_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(null, "Â¡Error, verifica los datos!", "Error",
+            JOptionPane.showMessageDialog(null, "¡Error, verifica los datos!", "Error",
         JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_accederBtnMouseClicked
-
-    private void emailTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emailTxtMousePressed
-        // TODO add your handling code here:
-        emailTxt.setForeground(Color.black);
-        emailTxt.setText("");
-    }//GEN-LAST:event_emailTxtMousePressed
-
-    private void passwordTxtMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordTxtMousePressed
-        // TODO add your handling code here:
-        passwordTxt.setForeground(Color.black);
-        passwordTxt.setText(null);
-    }//GEN-LAST:event_passwordTxtMousePressed
 
     private void accederBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseEntered
         // TODO add your handling code here:
@@ -276,40 +215,14 @@ public class FormularioEnter extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x-xMouse, y-yMouse);
     }//GEN-LAST:event_barraMouseDragged
-
-    private void emailTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTxtActionPerformed
-        // TODO add your handling code here:
-       
-    }//GEN-LAST:event_emailTxtActionPerformed
-
+    
+   
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormularioEnter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormularioEnter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormularioEnter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormularioEnter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
+        
+        FlatCyanLightIJTheme.setup();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -322,7 +235,6 @@ public class FormularioEnter extends javax.swing.JFrame {
     private javax.swing.JPanel accederBtn;
     private javax.swing.JLabel accederTxt;
     private javax.swing.JPanel barra;
-    private javax.swing.JTextField emailTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -330,7 +242,8 @@ public class FormularioEnter extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel logo2;
-    private javax.swing.JPasswordField passwordTxt;
+    private javax.swing.JTextField passwordTxt;
+    private javax.swing.JTextField userNameTxt;
     private javax.swing.JPanel whiteBg;
     // End of variables declaration//GEN-END:variables
 }
