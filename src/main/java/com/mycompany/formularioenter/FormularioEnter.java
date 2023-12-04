@@ -95,7 +95,7 @@ public class FormularioEnter extends javax.swing.JFrame {
         whiteBg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jLabel2.setText("Contraseña");
+        jLabel2.setText("ContraseÃ±a");
         whiteBg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         accederBtn.setBackground(new java.awt.Color(153, 153, 255));
@@ -142,7 +142,7 @@ public class FormularioEnter extends javax.swing.JFrame {
         whiteBg.add(accederBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 200, 40));
 
         jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        jLabel3.setText("INICIAR SESIÓN ");
+        jLabel3.setText("INICIAR SESIÃ“N ");
         whiteBg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 160, -1));
         whiteBg.add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 200, -1));
         whiteBg.add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 200, -1));
@@ -174,13 +174,15 @@ public class FormularioEnter extends javax.swing.JFrame {
 
     private void accederBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseClicked
         // TODO add your handling code here:
+        /*
         if(String.valueOf(passwordTxt.).equals("123456" ) && emailTxt.getText().equals("michelle@gmail.com" )){
-             JOptionPane.showMessageDialog(null, "¡Bienvenido al sistema!", "Inicio de sesión exitoso",
+             JOptionPane.showMessageDialog(null, "Â¡Bienvenido al sistema!", "Inicio de sesiÃ³n exitoso",
         JOptionPane.INFORMATION_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(null, "¡Error, verifica los datos!", "Error",
+            JOptionPane.showMessageDialog(null, "Â¡Error, verifica los datos!", "Error",
         JOptionPane.ERROR_MESSAGE);
         }
+        */
     }//GEN-LAST:event_accederBtnMouseClicked
 
     private void accederBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseEntered
