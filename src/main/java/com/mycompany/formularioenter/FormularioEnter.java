@@ -7,6 +7,7 @@ package com.mycompany.formularioenter;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,11 +17,13 @@ import javax.swing.JOptionPane;
 public class FormularioEnter extends javax.swing.JFrame {
 
     public int xMouse, yMouse;
+    private JButton accederButton;
     /**
      * Creates new form Login
      */
     public FormularioEnter() {
         initComponents();
+        getRootPane().setDefaultButton(jButton1);
     }
 
     /**
@@ -41,11 +44,10 @@ public class FormularioEnter extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        accederBtn = new javax.swing.JPanel();
-        accederTxt = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         userNameTxt = new javax.swing.JTextField();
         passwordTxt = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -98,54 +100,21 @@ public class FormularioEnter extends javax.swing.JFrame {
         jLabel2.setText("Contraseña");
         whiteBg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
-        accederBtn.setBackground(new java.awt.Color(153, 153, 255));
-        accederBtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                accederBtnMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                accederBtnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                accederBtnMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                accederBtnMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                accederBtnMouseReleased(evt);
-            }
-        });
-
-        accederTxt.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        accederTxt.setForeground(new java.awt.Color(255, 255, 255));
-        accederTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        accederTxt.setText("ACCEDER");
-
-        javax.swing.GroupLayout accederBtnLayout = new javax.swing.GroupLayout(accederBtn);
-        accederBtn.setLayout(accederBtnLayout);
-        accederBtnLayout.setHorizontalGroup(
-            accederBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(accederBtnLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(accederTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-        accederBtnLayout.setVerticalGroup(
-            accederBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, accederBtnLayout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addComponent(accederTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        whiteBg.add(accederBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 200, 40));
-
         jLabel3.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
         jLabel3.setText("INICIAR SESIÓN ");
         whiteBg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 160, -1));
         whiteBg.add(userNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 200, -1));
         whiteBg.add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 200, -1));
+
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("ACCEDER");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        whiteBg.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 200, 40));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -172,39 +141,6 @@ public class FormularioEnter extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void accederBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseClicked
-        // TODO add your handling code here:
-        /*
-        if(String.valueOf(passwordTxt.).equals("123456" ) && emailTxt.getText().equals("michelle@gmail.com" )){
-             JOptionPane.showMessageDialog(null, "¡Bienvenido al sistema!", "Inicio de sesión exitoso",
-        JOptionPane.INFORMATION_MESSAGE);
-        }else{
-            JOptionPane.showMessageDialog(null, "¡Error, verifica los datos!", "Error",
-        JOptionPane.ERROR_MESSAGE);
-        }
-        */
-    }//GEN-LAST:event_accederBtnMouseClicked
-
-    private void accederBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseEntered
-        // TODO add your handling code here:
-         accederBtn.setBackground(new Color(0,102,102));
-    }//GEN-LAST:event_accederBtnMouseEntered
-
-    private void accederBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseExited
-        // TODO add your handling code here:
-        accederBtn.setBackground(new Color(153,153,255));
-    }//GEN-LAST:event_accederBtnMouseExited
-
-    private void accederBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMousePressed
-        // TODO add your handling code here:
-        accederBtn.setBackground(new Color(0,204,204));
-    }//GEN-LAST:event_accederBtnMousePressed
-
-    private void accederBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accederBtnMouseReleased
-        // TODO add your handling code here:
-        accederBtn.setBackground(new Color(153,153,255));
-    }//GEN-LAST:event_accederBtnMouseReleased
-
     private void barraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barraMousePressed
         // TODO add your handling code here:
         xMouse = evt.getX();
@@ -217,6 +153,11 @@ public class FormularioEnter extends javax.swing.JFrame {
         int y = evt.getYOnScreen();
         this.setLocation(x-xMouse, y-yMouse);
     }//GEN-LAST:event_barraMouseDragged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("HOLA");
+    }//GEN-LAST:event_jButton1ActionPerformed
     
    
     /**
@@ -234,9 +175,8 @@ public class FormularioEnter extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel accederBtn;
-    private javax.swing.JLabel accederTxt;
     private javax.swing.JPanel barra;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
